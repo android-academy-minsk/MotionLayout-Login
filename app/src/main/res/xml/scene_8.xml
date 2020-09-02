@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start">
+
+        <OnSwipe
+            app:dragDirection="dragLeft"
+            app:maxAcceleration="50"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/sign_up_root"
+            app:touchAnchorSide="left" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="30"
+                app:motionTarget="@+id/login_email" />
+
+            <KeyPosition
+                app:framePosition="30"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@+id/login_email"
+                app:percentX="0.5" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="30"
+                app:motionTarget="@+id/login_password" />
+
+            <KeyPosition
+                app:framePosition="30"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@+id/login_password"
+                app:percentX="0.5" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="10"
+                app:motionTarget="@+id/forgot_password" />
+
+            <KeyPosition
+                app:framePosition="30"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@+id/forgot_password"
+                app:percentX="0.5" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="70"
+                app:motionTarget="@+id/sign_up_email" />
+
+            <KeyPosition
+                app:framePosition="70"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@+id/sign_up_email"
+                app:percentX="0.5" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="70"
+                app:motionTarget="@+id/sign_up_password" />
+
+            <KeyPosition
+                app:framePosition="70"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@+id/sign_up_password"
+                app:percentX="0.5" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="70"
+                app:motionTarget="@+id/sign_up_confirm_password" />
+
+            <KeyPosition
+                app:framePosition="70"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@+id/sign_up_confirm_password"
+                app:percentX="0.5" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/sign_up_email">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="70dp"
+                app:layout_constraintEnd_toEndOf="@+id/sign_up_root"
+                app:layout_constraintStart_toStartOf="@+id/sign_up_root"
+                app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+            <PropertySet
+                android:alpha="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/sign_up_password">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/sign_up_root"
+                app:layout_constraintStart_toStartOf="@+id/sign_up_root"
+                app:layout_constraintTop_toBottomOf="@+id/sign_up_email" />
+
+            <PropertySet
+                android:alpha="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/sign_up_confirm_password">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/sign_up_root"
+                app:layout_constraintStart_toStartOf="@+id/sign_up_root"
+                app:layout_constraintTop_toBottomOf="@+id/sign_up_password" />
+
+            <PropertySet
+                android:alpha="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/login_email">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="70dp"
+                app:layout_constraintEnd_toEndOf="@+id/login_root"
+                app:layout_constraintStart_toStartOf="@+id/login_root"
+                app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/login_password">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/login_root"
+                app:layout_constraintStart_toStartOf="@+id/login_root"
+                app:layout_constraintTop_toBottomOf="@+id/login_email" />
+
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/forgot_password">
+
+            <Layout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="@+id/login_password"
+                app:layout_constraintStart_toStartOf="@+id/login_password"
+                app:layout_constraintTop_toBottomOf="@id/login_password" />
+
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/logo"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="32dp">
+
+            <Layout
+                app:layout_constraintEnd_toStartOf="@+id/sign_up_root"
+                app:layout_constraintStart_toStartOf="@+id/login_root"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CustomAttribute
+                app:attributeName="crossfade"
+                app:customFloatValue="0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/login_text"
+            android:layout_width="250dp"
+            android:layout_height="50dp">
+
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/login_root"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/forgot_password"
+                app:layout_constraintVertical_bias="0.6" />
+
+            <Transform android:rotation="0" />
+
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customFloatValue="36" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/sign_up_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/sign_up_root"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Transform android:rotation="-90" />
+
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customFloatValue="16" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/login_root"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.9" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/sign_up_root"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/login_root"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.1" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/sign_up_email">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="70dp"
+                app:layout_constraintEnd_toEndOf="@+id/sign_up_root"
+                app:layout_constraintStart_toStartOf="@+id/sign_up_root"
+                app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/sign_up_password">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/sign_up_root"
+                app:layout_constraintStart_toStartOf="@+id/sign_up_root"
+                app:layout_constraintTop_toBottomOf="@+id/sign_up_email" />
+
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/sign_up_confirm_password">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/sign_up_root"
+                app:layout_constraintStart_toStartOf="@+id/sign_up_root"
+                app:layout_constraintTop_toBottomOf="@+id/sign_up_password" />
+
+            <PropertySet
+                android:alpha="1"
+                android:visibility="visible" />
+        </Constraint>
+
+
+        <Constraint android:id="@+id/login_email">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="70dp"
+                app:layout_constraintEnd_toEndOf="@+id/login_root"
+                app:layout_constraintStart_toStartOf="@+id/login_root"
+                app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+            <PropertySet
+                android:alpha="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/login_password">
+            <Layout
+                android:layout_width="250dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/login_root"
+                app:layout_constraintStart_toStartOf="@+id/login_root"
+                app:layout_constraintTop_toBottomOf="@+id/login_email" />
+
+            <PropertySet
+                android:alpha="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/forgot_password">
+
+            <Layout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="@+id/login_password"
+                app:layout_constraintStart_toStartOf="@+id/login_password"
+                app:layout_constraintTop_toBottomOf="@id/login_password" />
+
+            <PropertySet
+                android:alpha="0"
+                android:visibility="invisible" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/logo"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="32dp">
+
+            <Layout
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/sign_up_root"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CustomAttribute
+                app:attributeName="crossfade"
+                app:customFloatValue="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/login_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/login_root"
+                app:layout_constraintStart_toStartOf="@id/login_root"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Transform android:rotation="-90" />
+
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customFloatValue="16" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/sign_up_text"
+            android:layout_width="250dp"
+            android:layout_height="50dp">
+
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/sign_up_root"
+                app:layout_constraintStart_toStartOf="@+id/sign_up_root"
+                app:layout_constraintTop_toBottomOf="@id/sign_up_confirm_password"
+                app:layout_constraintVertical_bias="0.6" />
+
+            <Transform android:rotation="0" />
+
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customFloatValue="36" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/login_root"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/sign_up_root"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <Layout
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/login_root"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.9" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
